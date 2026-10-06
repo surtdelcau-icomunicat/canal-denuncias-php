@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro de Denuncia</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <style>
+        .navbar {
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    
+    <title>Canal de Denuncias Internas</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Sistema de Denuncias</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <!--<li class="nav-item">
+                        <a class="nav-link" href="#">Registrar Denuncia</a>
+                    </li>-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="consult_ticket.php">Consultar Denuncia</a>
+                    </li>
+                    <!--<li class="nav-item">
+                        <a class="nav-link" href="admin_dashboard.php">Administración</a>
+                    </li>-->
+                </ul>
+            </div>
+        </nav>
+    <!--
+        <p>Nuestra empresa en cumplimiento de la Ley 2/2023, de 20 de febrero, reguladora de la protección de las personas que informen sobre infracciones normativas y de lucha contra la corrupción ha implantado el canal interno de información, a disposición de aquellas personas que, estando vinculadas a nuestra organización, quieran informar sobre posibles irregularidades y actos de corrupción de manera confidencial y protegida.</p>
+        <p>Conforme a los principios de transparencia y salvaguarda contemplados en la ley, este canal garantiza la confidencialidad de la identidad de la persona que quiera informar, así como la prohibición de represalias y la protección frente a consecuencias adversas derivadas de la denuncia. Todos los informes recibidos serán tratados con la máxima seriedad y confidencialidad, y se adoptarán las medidas necesarias para investigar y sancionar cualquier infracción normativa o acto de corrupción denunciado de manera justa y efectiva.</p>
+        <p>Este canal de denuncias tiene el objetivo de brindar a las personas un espacio seguro y confiable donde puedan hacer oír su voz y contribuir a la lucha contra la corrupción. A través de este canal, se invita a todas aquellas personas que posean información relevante sobre posibles infracciones normativas o actos corruptos a que se manifiesten y aporten su testimonio de manera responsable. Juntos, podemos construir una sociedad más justa e íntegra, donde prevalezcan los valores éticos y se combata activamente la corrupción en todas sus formas.</p>
+        <p>La denuncia puede realizarse con identificación del denunciante, o incluso de forma anónima. La persona informante podrá ver el progreso del estado de la denuncia, accediendo a la opción seguimiento con el ID que se le facilitará al cursar la denuncia.</p>
+        <p><strong>Aviso:</strong> Deben tener presente que tanto el informante como las personas afectadas por la denuncia tendrán derecho a la preservación de su identidad, en los términos previstos en el artículo 32 de la Ley 2/2023, de 20 de febrero. Además, las personas informantes cuentan con una serie de derechos, cuando las informaciones que proporcionen cumplan con los requisitos de los artículos 2 y 35 de esa norma, entre los que destaca la prohibición de represalias (artículo 36). Considera también las medidas de apoyo y de protección frente a las represalias que la Ley recoge en sus artículos 37 y 38.</p>
+        <p>También le informamos que “comunicar o revelar públicamente información a sabiendas de su falsedad” se considera infracción muy grave y que la Ley prevé multa desde 30.001 hasta 300.000 euros para las personas físicas que la cometan [artículos 63.1.f) y 65.1.a) de la citada Ley].</p>
+    -->
+    <br>
+    <br>
+    <br>
+    <h1 class="mb-4">CANAL DE DENUNCIAS INTERNAS</h1>
+    </div>
+    <div class="container mt-5">
+        <h2 class="text-center">Formulario de Registro de Denuncia</h2>
+        <form action="submit_ticket.php" method="post">
+            <!-- Categoría 1: Datos -->
+            <h4>1. Datos</h4>
+            <div class="form-group">
+                <label for="lugar_incidente">Empresa a la que se dirige la denuncia (Lugar donde sucedió el incidente dirección, centro de trabajo, etc.):</label>
+                <input type="text" class="form-control" id="lugar_incidente" name="lugar_incidente" required>
+            </div>
+            <div class="form-group">
+                <label for="relacion">¿Cuál es su relación con la empresa o denunciado?</label>
+                <input type="text" class="form-control" id="relacion" name="relacion" required>
+            </div>
+
+            <!-- Categoría 2: Tipo de Denuncia -->
+            <h4>2. Tipo de Denuncia</h4>
+            <div class="form-group">
+                <label for="tipo_denuncia">¿Desea presentar denuncia confidencial o anónima?</label>
+                <select class="form-control" id="tipo_denuncia" name="tipo_denuncia" required>
+                    <option value="confidencial">Confidencial</option>
+                    <option value="anonima">Anónima</option>
+                </select>
+            </div>
+            <div id="datos_confidenciales">
+                <h5>Complete la siguiente información</h5>
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre">
+                </div>
+                <div class="form-group">
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" class="form-control" id="apellidos" name="apellidos">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" class="form-control" id="telefono" name="telefono">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="puesto_trabajo">Puesto de trabajo:</label>
+                    <input type="text" class="form-control" id="puesto_trabajo" name="puesto_trabajo">
+                </div>
+            </div>
+            <div id="razon_anonimato" style="display: none;">
+                <div class="form-group">
+                    <label for="razon_anonimato_text">Razón para mantener el anonimato:</label>
+                    <textarea class="form-control" id="razon_anonimato_text" name="razon_anonimato"></textarea>
+                </div>
+            </div>
+
+            <!-- Categoría 3: Denuncia -->
+            <h4>3. Denuncia</h4>
+            <div class="form-group">
+                <label for="tipo_delito">Tipo de delito denunciado:</label>
+                <select class="form-control" id="tipo_delito" name="tipo_delito" required>
+                    <option value="corrupcion">Corrupción</option>
+                    <option value="irregularidades_clientes">Irregularidades con clientes o proveedores</option>
+                    <option value="discriminacion_acoso">Discriminación y acoso</option>
+                    <option value="quebranto_economico">Quebranto económico para la Hacienda Pública o para Seguridad Social</option>
+                    <option value="blanqueo_capitales">Blanqueo de capitales</option>
+                    <option value="vulneracion_secreto">Vulneración del deber de secreto y control de la información</option>
+                    <option value="proteccion_datos">Vulneración de Protección de Datos</option>
+                    <option value="otros">Otros (Especificar)</option>
+                </select>
+            </div>
+            <div id="otros_delito" style="display: none;">
+                <div class="form-group">
+                    <label for="otros_delito_text">Especificar:</label>
+                    <textarea class="form-control" id="otros_delito_text" name="otros_delito"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción de los hechos:</label>
+                <textarea class="form-control" id="descripcion" name="descripcion" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="fecha_hechos">Indique si los hechos se están produciendo actualmente o en qué fecha se produjeron:</label>
+                <input type="text" class="form-control" id="fecha_hechos" name="fecha_hechos" required>
+            </div>
+            <div class="form-group">
+                <label for="afectados">Afectados:</label>
+                <input type="text" class="form-control" id="afectados" name="afectados" required>
+            </div>
+            <div class="form-group">
+                <label>¿Conoce la identidad de las personas comprometidas en este comportamiento?</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="identidad_conocida" id="identidad_si" value="si">
+                    <label class="form-check-label" for="identidad_si">Sí</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="identidad_conocida" id="identidad_no" value="no">
+                    <label class="form-check-label" for="identidad_no">No</label>
+                </div>
+            </div>
+            <div id="detalles_identidad" style="display: none;">
+                <div class="form-group">
+                    <label for="nombre_cargo">En caso afirmativo, indique nombre completo y cargo:</label>
+                    <textarea class="form-control" id="nombre_cargo" name="nombre_cargo"></textarea>
+                </div>
+            </div>
+
+            <!-- Categoría 4: Otra Información -->
+            <h4>4. Otra Información</h4>
+            <div class="form-group">
+                <label>Dispone de algún documento acreditativo de la irregularidad denunciada:</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="documento_acreditativo" id="documento_si" value="si">
+                    <label class="form-check-label" for="documento_si">Sí</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="documento_acreditativo" id="documento_no" value="no">
+                    <label class="form-check-label" for="documento_no">No</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="documento_acreditativo" id="documento_no_revelar" value="no_desea_revelar">
+                    <label class="form-check-label" for="documento_no_revelar">No desea revelar</label>
+                </div>
+            </div>
+            <div id="detalles_documento" style="display: none;">
+                <div class="form-group">
+                    <label for="descripcion_documento">En caso afirmativo, indique cuál:</label>
+                    <textarea class="form-control" id="descripcion_documento" name="descripcion_documento"></textarea>
+                </div>
+            </div>
+
+            <!-- Botón de Enviar -->
+            <h3 class="mt-5">Protección de datos</h3>
+            <p>Le informamos que el tratamiento de sus datos será efectuado por ARAUSER, S.L. como encargado del tratamiento del Canal de denuncias del Responsable titular de la web, con la finalidad de gestionar, tramitar y dar respuesta a las denuncias. Puede ejercer sus derechos de acceso, rectificación, supresión, portabilidad, limitación y oposición tal como le indicamos en este <a href="protecciondedatos.html" target="_blank" >enlace</a>.</p>
+    
+            <!--
+      <p>Los datos personales que facilite serán incorporados a un fichero responsabilidad de ASESORIA SANT ANDREU SL, con domicilio en Ctra. de Barcelona, 26 Local 6, SANT ANDREU DE LA BARCA (08740) BARCELONA, ESPAÑA, con la finalidad de gestionar su comunicación, realizar la investigación de los hechos denunciados, adoptar las medidas correctivas pertinentes, y en caso de ser necesario, informarle sobre el resultado del procedimiento.</p>
+      <p>Los datos personales serán tratados de forma confidencial y no serán comunicados a ningún tercero, salvo que resultasen imprescindibles para la investigación de los hechos denunciados.</p>
+      <p>La base jurídica que legitima este tratamiento es la necesidad para el ejercicio de una misión de interés público, como es la prevención de infracciones penales y de la responsabilidad penal de ASESORIA SANT ANDREU SL.</p>
+      <p>Los datos serán tratados con las finalidades indicadas durante el plazo necesario para su investigación conforme a lo establecido en la normativa vigente.</p>
+      <p>En todo momento podrá ejercer sus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad con respecto a los datos personales que haya facilitado, a través de correo postal a la dirección indicada, aportando copia de su DNI o documento equivalente, e identificándose como usuario del formulario de canal de denuncias.</p>
+      <p>En caso de considerar vulnerado su derecho a la protección de datos podrá interponer una reclamación ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es">www.aepd.es</a>) o ante el Delegado de Protección de Datos de ASESORIA SANT ANDREU SL (asesoria@asesoriasantandreu.com).</p>
+        -->
+        <button type="submit" class="btn btn-primary">Enviar Denuncia</button>    
+        </form>
+        
+    </div>
+
+    <script>
+        // Mostrar todos los campos confidenciales por defecto
+        $('#datos_confidenciales').show();
+
+        // Mostrar/ocultar campos según el tipo de denuncia
+        $('#tipo_denuncia').on('change', function() {
+            if ($(this).val() === 'confidencial') {
+                $('#datos_confidenciales').show();
+                $('#razon_anonimato').hide();
+            } else if ($(this).val() === 'anonima') {
+                $('#datos_confidenciales').hide();
+                $('#razon_anonimato').show();
+            } else {
+                $('#datos_confidenciales').hide();
+                $('#razon_anonimato').hide();
+            }
+        });
+
+        // Mostrar/ocultar campo de "otros" en tipo de delito
+        $('#tipo_delito').on('change', function() {
+            if ($(this).val() === 'otros') {
+                $('#otros_delito').show();
+            } else {
+                $('#otros_delito').hide();
+            }
+        });
+
+        // Mostrar/ocultar detalles de identidad según respuesta
+        $('input[name="identidad_conocida"]').on('change', function() {
+            if ($(this).val() === 'si') {
+                $('#detalles_identidad').show();
+            } else {
+                $('#detalles_identidad').hide();
+            }
+        });
+
+        // Mostrar/ocultar detalles del documento acreditativo
+        $('input[name="documento_acreditativo"]').on('change', function() {
+            if ($(this).val() === 'si') {
+                $('#detalles_documento').show();
+            } else {
+                $('#detalles_documento').hide();
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <footer class="bg-light text-center mt-5 py-3">
+        <a href="admin_dashboard.php">Administración</a>
+    </footer>
+</body>
+</html>
